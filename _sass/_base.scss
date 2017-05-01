@@ -8,10 +8,8 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
-
 /** Variables **********************************************/
-$base-font-family:              Helvetica, sans-serif;
+$base-font-family:              'Raleway', sans-serif; //Helvetica, sans-serif;
 $base-line-height:              1.5em;
 $horizontal-spacing-unit:       50px;
 $vertical-spacing-unit:         40px;
@@ -24,22 +22,75 @@ $caption_font_size: 12px;
 $caption_color: #aaa;
 
 /* COLORS  */
-$red:  #FF3636;
-$orange: #F29105;
-$blue: #2698BA;
-$green: #11D68B;
-$lime_green: #B7D12A;
-$purple: #B509AC;
+// *folio default colors
+// $red:  #FF3636;
+// $orange: #F29105;
+// $blue: #2698BA;
+// $green: #11D68B;
+// $lime_green: #B7D12A;
+// $purple: #B509AC;
 
 
 $grey-color-dark: #333;   /* footer */
 $grey-color-light: #ddd;  /* navigation bar border */
-$text-color:     #666;
-
-/* Set theme color *************************/
-$theme-color:   $red;
 
 
+$white: #F5F5F5;
+$fuchsia: #DC0095;
+$black: #424242;
+$ltblue: #1976d2;
+$green: #1DE9B6;
+$bright-white: #FFF;
+
+
+
+/* Set theme colors *************************/
+$theme-color:   $ltblue;//$red;
+$highlight-color: $fuchsia;
+$selection-color: $green;
+$text-color:     $black;
+
+/************************************************************/
+
+/** =\ Testing /= ******************************************/
+
+body {
+p,a,h1,h2,h3,h4,h5,h6,img,span,br,b,i,strong,em,ul,li,code,div,blockquote {
+&::selection {
+color: $bright-white !important;
+background-color: $selection-color !important;
+        }
+    }
+}
+
+p {
+    font-family: 'Lora', serif;
+    max-width: 550px;
+}
+
+a {
+    opacity: 0.75;
+    // transition: all .3s ease;
+}
+
+h1,h2,p,ul {
+    //transition: all .3s ease; //***********************transition
+}
+
+.header-bar {
+    h1 {
+        font-family: 'Lora', serif;
+        opacity: 0.75;
+    }
+    h2 {
+        color: $black;
+    }
+}
+
+
+
+
+/************************************************************/
 /************************************************************/
 
 /**
@@ -50,9 +101,10 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 100;
-    color: $text-color;
+    color: $black;//$text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    letter-spacing: 0.03rem;
 }
 
 
@@ -101,10 +153,44 @@ ul, ol {
     margin-left: $horizontal-spacing-unit;
 }
 
+article ul {
+    list-style-type: none;
+
+    & li:before {
+        content: '//';
+        position: absolute;
+        margin-left: -1.33rem;
+        font-size: 1.066rem;
+    }
+}
+
 li {
     > ul,
     > ol {
          margin-bottom: 0;
+    }
+}
+
+ul.post-list {
+margin-left: 3rem;
+li {
+h2 {
+}
+&:before {
+padding-top: .96rem;
+margin-left: -2rem;
+font-size: 1.66rem;
+@include media-query ($on-laptop) {
+padding-top: .79rem;
+margin-left: -1.33rem;
+font-size: 1.066rem
+            }
+        }   
+    }
+@include media-query ($on-laptop){
+}
+@include media-query ($on-palm) {
+margin-left: 1.5rem;    
     }
 }
 
@@ -124,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $text-color;
     text-decoration: none;
+    border-bottom: 2px dotted currentColor;
     /*
     &:visited {
         color: darken($brand-color, 15%); 
@@ -132,15 +219,22 @@ a {
     &:hover {
         color: $theme-color;
         text-decoration: none;
+        transition:  //***********************transition
+                    color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+                    border-bottom 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 }
 
 article a {
-    color: $theme-color;
-    font-weight: 100;
+    color: $black;
+    font-style: italic;
+    opacity: 100;   
+    border-bottom: 2px dotted $theme-color;
+    //transition: all .3s ease;  //***********************transition
 
     &:hover {
         text-decoration: none;
+        color: $theme-color;
     }
 }
 
@@ -226,3 +320,138 @@ pre {
 
 
 
+
+
+
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+// _form.scss
+
+div.form-wrapper {
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    h2 {
+        line-height: 2.5rem;
+        margin-left: 10px;
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        text-decoration: none;
+        border-bottom: none;
+        color: #333;
+        opacity: 100;
+        &:hover {
+            color: currentColor;
+        }
+    }
+}
+
+div.goodNewsEveryone_submit {
+position: relative;
+width: 520px;
+//border: 1px solid red;
+margin: 0 auto;
+min-height: 312px;
+& form {
+margin: 0 auto;
+max-width: 500px;
+& textarea {
+margin: 0 auto;
+width: 95%;
+min-height: 107px;
+display: block;
+font-size: 24px; 
+line-height: 28px;
+position: relative;
+text-align: left;
+border: none;
+padding-top: 25px;
+padding-left: 10px;
+        }    
+    }
+div.footer-container {
+background-color: #ddd;
+position: relative;
+//border: 1px dotted red;
+position: absolute;
+bottom: 0;
+width: 100%;
+margin: 0 auto;
+input[type=submit] {
+display: block;
+float: right;
+padding: 10px 20px;
+margin: 5px;
+font-size: .9em;
+//margin-right: 6.5em;
+//position: absolute;
+bottom: 0;
+//right: .75em;
+color: #fff;
+background-color: #4267b2;
+border: none;
+text-align: center;
+font-size: 1rem;
+    }
+}
+div.stickers-container {
+position: absolute;
+width: 100%;
+margin: 0 auto;
+ul.stickers {
+position: relative;
+margin: 0 auto;
+padding: 0 3%;
+text-align: left;
+padding-top: 10px;
+display: flex;
+&:first-child {
+padding-top: 15px;
+    }
+&:nth-child(3) {
+padding-bottom: 15px;
+}
+& li, input[type=button] {
+position: relative;
+display: inline-block;
+padding: 2px 1em;
+margin: 0 5px;
+background-color: #f6f7f9;
+flex-grow: 1;
+border-radius: 16px;
+font-size: .8em;
+max-width: 200px;
+&:hover {
+background-color: #ddd;
+                }
+&:active {
+border: 1px solid #333;
+                }
+            }
+& img {
+position: relative;
+display: inline-block;
+top: 3px; bottom: 0; left: 0; right: 0;
+            }
+        }
+    }
+}
+
+/* feed ******************************************************/
+
+div.goodNewsEveryone_feed {
+width: 515px;
+min-height: 800px;
+border: 1px dotted red;
+margin: 0 auto;
+background-image: url("/img/fbhackathon_Newsfeed-item2.png");
+}

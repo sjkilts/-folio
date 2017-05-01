@@ -1,17 +1,57 @@
+/**
+ * page highlight color   *************************************************
+ */
+body.body {
+    padding-top: .66vh;
+    background: $fuchsia;
+}
+
+.content-wrapper {
+    background: $white;
+    //margin: 0 auto;
+    //display: block;
+}
 
 /**
  * Site header   **********************************************************
  */
 .site-header {
-border-bottom: 1px solid $grey-color-light;
-background-color: #fff;
-opacity: 0.75;
-position:fixed;
+//border-bottom: 1px solid $grey-color-light;
+//background-color: $white;
+//position:fixed;
 left:0px;
 top:0px;
 height:56px;
 width:100%;
 z-index: 50;
+font-size: 1.25rem;
+transition: all .3s ease; //***********************transition
+a {
+border-bottom: none;
+    }
+.logo {
+float: left;
+line-height: 2rem;//$nav-height;
+font-family: 'Lora', serif;
+font-size: 1.5rem;
+color: $black;
+opacity: 100;
+border-bottom: 2px solid currentColor;
+padding-top: .5rem;
+&:hover {
+    border-bottom: 2px solid $fuchsia;
+    transition: all .2s ease; //***********************transition
+        }
+    }
+.trigger {
+opacity: 0.75;
+    }
+@include media-query($on-palm){
+font-size: 1rem;
+.logo{
+    font-size: 1.125rem;
+        }
+    }
 }
 
 .site-title {
@@ -27,6 +67,15 @@ color: $theme-color;
 .site-nav {
 float: right;
 line-height: $nav-height;
+.trigger {
+ul {
+line-height: 3.33rem;
+& li {
+display: inline;
+padding: 0 0.25rem;
+        }    
+    }
+}
 .page-link{
 line-height: $base-line-height;
         // Gaps between nav items, but not on the first one
@@ -35,7 +84,7 @@ margin-left: 10px;
         }
     }
 @include media-query($on-palm) {
-position: fixed;
+//position: fixed;
 top: 0px;
 right: 10px;
 text-align: right;
@@ -43,6 +92,15 @@ text-align: right;
 display: block;
 padding-bottom: 5px;
         }
+.trigger {
+ul {
+padding-top: .5rem;
+& li {
+display: block;
+line-height: 2rem;
+        }
+    }
+}
 .page-link {
 display: line;
         }
@@ -55,36 +113,137 @@ display: line;
     position: relative;
     font-size: 20px;
     display: block;
-    opacity: 0.75;
+    // opacity: 0.75;
     width: 100%;
-    text-align: center;
-    padding-top: 25px;
+    text-align: left;
+    padding-top: 1.5rem;
+    padding-bottom: 4.20rem;
     line-height: 3em;
     z-index: 25;
     h1{
         color: $theme-color;
         font-size:75px;
+        line-height: 2em;
     }
     h2{
-        font-size:25px;
+        font-size:2rem;//25px;
+    }
+    a {
+        transition: all .3s ease;
+        font-style: italic;
+        color: $text-color;
+        opacity: 100;
+        border-bottom: none;
+
+        &:hover {
+            color: $theme-color;
+        }
+
+        span {
+            color: $theme-color;
+            border-bottom: 2px dotted $theme-color !important;
+            font-style: italic;
+
+            &:hover {
+                color: $text-color;
+                border-bottom: 2px dotted $text-color;
+            }
+        }
+
+    }
+    .message{
+        padding-bottom: 2rem;
+        line-height: 2.33rem;//1.88rem;
+        //max-width: 450px;
+        margin: 0 auto;
+        //text-align: left;
     }
 }
 
 /**
  * Site footer  **********************************************************
  */
-.site-footer {
-border-top: 1px solid $grey-color-dark;
-font-size: 10px;
-background-color: $grey-color-dark;
-padding: 2px;
-color: #aaa;
-position:fixed;
-left:0px;
-bottom:0px;
-height:25px;
-width:100%;
+footer.site-footer {
+border-top: 0;
+
+& p {
+text-align: center;
+margin: 0 auto;
+color: $text-color;
+opacity: 0.75;
+line-height: 2.5rem;
 }
+
+& a {
+color: $fuchsia;
+border-bottom: none;
+}
+
+& img {
+display: block;
+margin: 0 auto;
+padding: 25px 0;
+height: 150px;
+}
+
+& div.footer-wrapper {
+margin: 0 auto;
+
+& ul.links {
+text-align: center;
+padding-bottom: 65px;
+margin: 0 auto;
+
+& li {
+display: inline;  
+text-align: center;
+padding-left: 15px;
+padding-right: 15px;
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 1.33rem;
+font-weight: 300;
+letter-spacing: .066rem;
+
+// & .is-active { // not sure why this isn't working
+//  font-weight: 400;
+// }
+
+& a:hover {
+font-weight: 400;
+text-decoration: none;
+        }
+    }
+}
+
+ul.contact {
+    text-align: center;
+list-style-type: none;
+margin-left: 0px;
+
+& li { //remove .footer-email from markup
+font-family: 'Raleway', sans-serif;
+font-size: 1.66rem;
+font-weight: 400;
+padding-top: 25px;
+padding-bottom: 25px;
+letter-spacing: .096rem;
+text-align: center;
+line-height: 2rem;
+
+& a:hover {
+    text-decoration: none;
+    }
+
+& #at {
+    font-weight: 300;
+    font-style: italic;
+    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
 /**
  * Pagination   **********************************************************
  */
@@ -113,8 +272,14 @@ font-size: 20px;
 .post-list {
 margin: 0px 0;
 list-style: none;
-    > li {
-margin-bottom: $vertical-spacing-unit;
+h2 {
+line-height: 1.5;
+font-family: 'Lora', serif;
+font-style: italic;
+font-size: 2rem;
+    }
+a {
+border-bottom: none;
     }
 }
 .contacticon {
@@ -132,16 +297,22 @@ text-align: center;
 margin-bottom: $vertical-spacing-unit;
 }
 .post-title {
-font-size: 42px;
-letter-spacing: -1px;
-line-height: 1;
+font-family: 'Lora', serif;
+font-style: italic;
+font-size: 3rem;
+line-height: 5rem;
+border-bottom: none;
 @include media-query($on-laptop) {
 font-size: 36px;
     }
 }
 .post-content {
+h1 {
+line-height: 4rem;
+color: $theme-color;
+}
 h2 {
-font-size: 42px;
+font-size: 2rem;//42px;
 @include media-query($on-laptop) {
 font-size: 28px;
         }
@@ -154,6 +325,7 @@ font-size: 22px;
     }
 h4 {
 font-size: 20px;
+line-height: 2rem;
 @include media-query($on-laptop) {
 font-size: 18px;
         }

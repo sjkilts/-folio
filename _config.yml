@@ -1,8 +1,8 @@
 # Site settings
-title: *folio
-email: you@example.com
+title: scott kilts
+email: hello@scottkilts.com
 description: > # this means to ignore newlines until "baseurl:"
-  A simple, whitespace, helvetica based portfolio theme.
+  A simple portfolio theme meant to showcase written and visual content.
 baseurl:  # the subpath of your site, e.g. /blog/
 url:  # the base hostname & protocol for your site
 twitter_username: twitter_username
@@ -26,4 +26,7 @@ collections:
     output: true
     permalink: /poetry/:path/
 
-
+# Ruby Gems
+gems:
+  - jekyll-paginate
+  - pygments
