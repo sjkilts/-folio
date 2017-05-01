@@ -78,12 +78,13 @@ h1,h2,p,ul {
 }
 
 .header-bar {
-    h1 {
-        font-family: 'Lora', serif;
-        opacity: 0.75;
+max-width: 34em;
+h1 {
+font-family: 'Lora', serif;
+opacity: 0.75;
     }
-    h2 {
-        color: $black;
+h2 {
+color: $black;
     }
 }
 
@@ -316,142 +317,4 @@ pre {
         display: table;
         clear: both;
     }
-}
-
-
-
-
-
-
-/********************************************************************/
-/********************************************************************/
-/********************************************************************/
-/********************************************************************/
-/********************************************************************/
-/********************************************************************/
-// _form.scss
-
-div.form-wrapper {
-    h1 {
-        margin: 0 auto;
-        text-align: center;
-        padding-bottom: 50px;
-    }
-    h2 {
-        line-height: 2.5rem;
-        margin-left: 10px;
-    }
-    p {
-        margin: 0;
-    }
-    a {
-        text-decoration: none;
-        border-bottom: none;
-        color: #333;
-        opacity: 100;
-        &:hover {
-            color: currentColor;
-        }
-    }
-}
-
-div.goodNewsEveryone_submit {
-position: relative;
-width: 520px;
-//border: 1px solid red;
-margin: 0 auto;
-min-height: 312px;
-& form {
-margin: 0 auto;
-max-width: 500px;
-& textarea {
-margin: 0 auto;
-width: 95%;
-min-height: 107px;
-display: block;
-font-size: 24px; 
-line-height: 28px;
-position: relative;
-text-align: left;
-border: none;
-padding-top: 25px;
-padding-left: 10px;
-        }    
-    }
-div.footer-container {
-background-color: #ddd;
-position: relative;
-//border: 1px dotted red;
-position: absolute;
-bottom: 0;
-width: 100%;
-margin: 0 auto;
-input[type=submit] {
-display: block;
-float: right;
-padding: 10px 20px;
-margin: 5px;
-font-size: .9em;
-//margin-right: 6.5em;
-//position: absolute;
-bottom: 0;
-//right: .75em;
-color: #fff;
-background-color: #4267b2;
-border: none;
-text-align: center;
-font-size: 1rem;
-    }
-}
-div.stickers-container {
-position: absolute;
-width: 100%;
-margin: 0 auto;
-ul.stickers {
-position: relative;
-margin: 0 auto;
-padding: 0 3%;
-text-align: left;
-padding-top: 10px;
-display: flex;
-&:first-child {
-padding-top: 15px;
-    }
-&:nth-child(3) {
-padding-bottom: 15px;
-}
-& li, input[type=button] {
-position: relative;
-display: inline-block;
-padding: 2px 1em;
-margin: 0 5px;
-background-color: #f6f7f9;
-flex-grow: 1;
-border-radius: 16px;
-font-size: .8em;
-max-width: 200px;
-&:hover {
-background-color: #ddd;
-                }
-&:active {
-border: 1px solid #333;
-                }
-            }
-& img {
-position: relative;
-display: inline-block;
-top: 3px; bottom: 0; left: 0; right: 0;
-            }
-        }
-    }
-}
-
-/* feed ******************************************************/
-
-div.goodNewsEveryone_feed {
-width: 515px;
-min-height: 800px;
-border: 1px dotted red;
-margin: 0 auto;
-background-image: url("/img/fbhackathon_Newsfeed-item2.png");
 }
