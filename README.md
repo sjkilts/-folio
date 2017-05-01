@@ -1,3 +1,10 @@
+# fork of Lia Bogoev's *folio theme
+- Currently customizing and building out into a portfolio site that fits my personal needs
+- **Goal:** Create and launch a new Jekyll theme building and improving on *folio
+-- *folio's read me will remain below until I can consider this something other than a tweak of *folio
+
+---
+
 # *folio
 A simple theme for showcasing your work, emphasis on whitespace, transparency, and helvetica. 
 
